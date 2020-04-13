@@ -1,5 +1,8 @@
 package com.brandon.EindOpdrachtJ2;
 
+import com.brandon.EindOpdrachtJ2.bike.Bike;
+import com.brandon.EindOpdrachtJ2.bike.MountainBike;
+import com.brandon.EindOpdrachtJ2.bike.NormalBike;
 import org.junit.jupiter.api.*;
 
 import java.util.HashMap;
@@ -87,8 +90,9 @@ class NSBikeShopTest {
     @Order(1)
     void TestLendBike() throws Exception{
         //throws exception if there are no bikes
-        shop.lendBike(BikeType.NormalBike, "John Doe", 0);
-
+        assertThrows(Exception.class, () -> {
+            shop.lendBike(BikeType.NormalBike, "John Doe", 0);
+        });
     }
 
     @Test
@@ -103,15 +107,13 @@ class NSBikeShopTest {
     }
 
     @Test
-    void TestCalculateTotalPrice() {
+    void TestCalculateTotalPrice() throws Exception {
         //create new bike and a rental object
-        MountainBike bike = new MountainBike();
-        BikeRentalObject rObject = new BikeRentalObject();
-        rObject.Hours = 5;
-        rObject.CustomerName = "Frank";
-        double price = shop.calculateTotalPrice(bike, rObject, 20000);
 
-        assertEquals(15d, price);
+        String bikeId = shop.lendBike(BikeType.MountainBike, "David", 7);
+        double price = shop.calculateTotalPrice(shop.getActiveRentalObjectByBikeId(bikeId));
+
+        assertEquals(14d, price);
     }
 
     @Test

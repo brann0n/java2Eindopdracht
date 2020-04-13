@@ -1,4 +1,6 @@
-package com.brandon.EindOpdrachtJ2;
+package com.brandon.EindOpdrachtJ2.bike;
+
+import com.brandon.EindOpdrachtJ2.bike.Bike;
 
 /*
  * Brandon Abbenhuis

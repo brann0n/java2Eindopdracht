@@ -1,4 +1,4 @@
-package com.brandon.EindOpdrachtJ2;
+package com.brandon.EindOpdrachtJ2.bike;
 
 import java.util.UUID;
 

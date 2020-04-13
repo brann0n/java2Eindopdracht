@@ -1,5 +1,8 @@
 package com.brandon.EindOpdrachtJ2;
 
+import com.brandon.EindOpdrachtJ2.bike.ElectricBike;
+import com.brandon.EindOpdrachtJ2.bike.MountainBike;
+import com.brandon.EindOpdrachtJ2.bike.NormalBike;
 import org.junit.jupiter.api.Test;
 import java.util.Objects;
 import static org.junit.jupiter.api.Assertions.*;
